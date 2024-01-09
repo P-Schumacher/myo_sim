@@ -111,6 +111,16 @@
         <touch name="r_toes" site="r_toes_touch"/>
         <touch name="l_foot" site="l_foot_touch"/>
         <touch name="l_toes" site="l_toes_touch"/>
+        <jointlimitfrc name="knee_l_limfrc" joint="knee_angle_l"/>
+        <jointlimitfrc name="knee_r_limfrc" joint="knee_angle_r"/>
+        <jointlimitfrc name="ankle_l_limfrc" joint="ankle_angle_l"/>
+        <jointlimitfrc name="ankle_r_limfrc" joint="ankle_angle_r"/>
+        <jointlimitfrc name="hip_flexion_l_limfrc" joint="hip_flexion_l"/>
+        <jointlimitfrc name="hip_flexion_r_limfrc" joint="hip_flexion_r"/>
+        <jointlimitfrc name="hip_adduction_l_limfrc" joint="hip_adduction_l"/>
+        <jointlimitfrc name="hip_adduction_r_limfrc" joint="hip_adduction_r"/>
+        <jointlimitfrc name="hip_rotation_l_limfrc" joint="hip_rotation_l"/>
+        <jointlimitfrc name="hip_rotation_r_limfrc" joint="hip_rotation_r"/>
     </sensor>
 
     <tendon>
