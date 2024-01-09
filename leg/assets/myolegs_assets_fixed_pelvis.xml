@@ -7,14 +7,14 @@
 	License	:: Under Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 ====================================================== -->
     <compiler angle="radian" inertiafromgeom="auto"/>
-    <option timestep="0.001"/>
+    <option timestep="0.002"/>
 
     <size nconmax="2000" njmax="5000" nkey="1" nuser_jnt="1"/>
     <!-- <visual>
         <headlight ambient=".5 .5 .5" diffuse="0.50 0.50 0.50" specular="0.50 0.50 0.50"/>
     </visual> -->
     <default>
-        <tendon rgba="0.95 0.3 0.3 1"/>
+	    <tendon rgba="0.95 0.3 0.3 1"/>
         <default class="myolegs">
             <joint armature="0.01" damping="0.5" limited="true"/>
             <geom margin="0.001" material="mat_myolegs" rgba="0.8 0.85 0.8 1" conaffinity="0" contype="0"/>
@@ -31,14 +31,14 @@
             </default>
             <default class="myo_leg_touch">
                 <site type="box" group="3" rgba="0.8 0.2 .2 .4"/>
-            </default>
-            <default class="myo_leg_marker">
-                <site size="0.02" group="4" rgba="0.8 0.8 .2 1"/>
+	    </default>
+	    <default class="myo_leg_marker">
+                  <site size="0.02" group="4" rgba="0.8 0.8 .2 1"/>
             </default>
             <default class="target_sites">
-                    <site rgba="0.5 0.5 0.5 0.2" group="4"/>
+            	<site rgba="0.5 0.5 0.5 0.2" group="4"/>
             </default>
-          </default>
+        </default>
     </default>
 
     <contact>
@@ -111,6 +111,16 @@
         <touch name="r_toes" site="r_toes_touch"/>
         <touch name="l_foot" site="l_foot_touch"/>
         <touch name="l_toes" site="l_toes_touch"/>
+        <jointlimitfrc name="knee_l_limfrc" joint="knee_angle_l"/>
+        <jointlimitfrc name="knee_r_limfrc" joint="knee_angle_r"/>
+        <jointlimitfrc name="ankle_l_limfrc" joint="ankle_angle_l"/>
+        <jointlimitfrc name="ankle_r_limfrc" joint="ankle_angle_r"/>
+        <jointlimitfrc name="hip_flexion_l_limfrc" joint="hip_flexion_l"/>
+        <jointlimitfrc name="hip_flexion_r_limfrc" joint="hip_flexion_r"/>
+        <jointlimitfrc name="hip_adduction_l_limfrc" joint="hip_adduction_l"/>
+        <jointlimitfrc name="hip_adduction_r_limfrc" joint="hip_adduction_r"/>
+        <jointlimitfrc name="hip_rotation_l_limfrc" joint="hip_rotation_l"/>
+        <jointlimitfrc name="hip_rotation_r_limfrc" joint="hip_rotation_r"/>
     </sensor>
 
     <tendon>
